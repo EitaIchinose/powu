@@ -1,24 +1,76 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                | Type    | Options                   |
+| --------------------- | ------- | ------------------------- |
+| nickname              | string  | null: false               |
+| email                 | string  | null: false, unique: true |
+| encrypted_password    | string  | null: false               |
+| family_name           | string  | null: false               |
+| given_name            | string  | null: false               |
+| family_name_kana      | string  | null: false               |
+| given_name_kana       | string  | null: false               |
+| duty_station          | string  | null: false               |
+| birthday              | date    | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :events
+- has_many :department_users
+- has_many :departments, through: department_users
+- has_many :comments
 
-* Configuration
+## departments テーブル
 
-* Database creation
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :events
+- has_many :department_users
+- has_many :users, through: department_users
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## department_users テーブル
 
-* ...
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| department    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :event
+
+## events テーブル
+
+| Column           | Type        | Options                        |
+| ---------------- | ----------- | ------------------------------ |
+| title            | string      | null: false                    |
+| start_time       | datetime    | null: false                    |
+| content          | integer     | null: false                    |
+| user             | references  | null: false, foreign_key:true  |
+| department       | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :department
+
+## comments テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| text          | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| department    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :department
