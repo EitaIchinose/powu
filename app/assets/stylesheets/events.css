@@ -86,6 +86,32 @@
   height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
   padding: 40px 40px 0;
+  overflow: scroll;
+}
+
+.comment {
+  margin-bottom: 40px;
+}
+
+.comment-user {
+  display: flex;
+  margin: 10px 0;
+}
+
+.comment-user-name {
+  color: #434A54;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.current-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.comment-content {
+  color: #434A54;
+  font-size: 14px;
 }
 
 /* メイン・フォーム */
@@ -93,4 +119,42 @@
   height: 90px;
   background-color: #DDDDDD;
   padding: 20px 40px;
+  display: flex;
+}
+
+.form-comment {
+  width: 100%;
+  background-color: white;
+  display: flex;
+}
+
+.form-input {
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  border: none;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-submit {
+  height: 50px;
+  padding: 0 20px;
+  color: white;
+  font-size: 16px;
+  background-color: #38AEF0;
+  border: none;
+  margin-left: 15px;
 }
