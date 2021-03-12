@@ -3,7 +3,7 @@
   display: flex;
 }
 
-/* サイドバー */
+/* サイドバー・全体 */
 .side-bar {
   background-color: #000066;
   width: 300px;
@@ -50,23 +50,45 @@
   color: white;
   text-decoration: none;
 }
-/* メイン */
+/* メイン・全体 */
 .event {
   background-color: #FFFFFF;
   width: calc(100vw - 300px);
 }
 
+/* メイン・ヘッダー */
 .event-header {
   height: 100px;
   padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.event-name {
+  font-size: 24px;
+  color: #333;
+  margin-top: 36px;
+}
+
+.event-destroy {
+  margin-top: 40px;
+}
+
+.event-destroy a {
+  text-decoration: none;
+  color: darkred;
+  border: 1px solid darkred;
+  padding: 20px;
+}
+
+/* メイン・イベント */
 .event-main {
   height: calc(100vh - 100px - 90px);
   background-color: #fafafa;
   padding: 40px 40px 0;
 }
 
+/* メイン・フォーム */
 .form {
   height: 90px;
   background-color: #DDDDDD;
