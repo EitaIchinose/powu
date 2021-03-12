@@ -54,7 +54,7 @@
 | title            | string      | null: false                    |
 | start_time       | datetime    | null: false                    |
 | content          | text        | null: false                    |
-| user             | references  | null: false, foreign_key:true  |
+| user             | references  | null: false, foreign_key: true |
 | department       | references  | null: false, foreign_key: true |
 
 ### Association
