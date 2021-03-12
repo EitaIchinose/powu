@@ -59,3 +59,4 @@ end
 
 gem  "simple_calendar" , "~> 2.4"
 gem 'devise'
+gem 'pry-rails'

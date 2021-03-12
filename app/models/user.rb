@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :password_confirmation
     with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/ } do
       validates :family_name
       validates :given_name
@@ -17,7 +16,11 @@ class User < ApplicationRecord
     end
     validates :birthday
   end
-  validates :password, :password_confirmation, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/ }
+
+  with_options format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/ }, on: create do
+    validates :password
+    validates :password_confirmation
+  end
 
   has_many :events
 end
