@@ -3,6 +3,10 @@
     <div class='account-page__inner--left account-page__header'>
       <h2>Log in</h2>
       <h5>登録しているユーザーでログイン</h5>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
       <%= render "devise/shared/links"%>
     </div>
     <div class='account-page__inner--right user-form'>

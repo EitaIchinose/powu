@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
+    validates :password_confirmation
     validates :nickname
     with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/ } do
       validates :family_name
