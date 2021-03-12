@@ -1,5 +1,5 @@
 <div class="side-header">
-  <%= link_to 'Tom', '#', class:"user-name" %>
+  <%= link_to current_user.nickname, edit_user_path(current_user), class:"user-name" %>
   <%= link_to '表を作成する', '#', class:"table-create" %>
 </div>
 
