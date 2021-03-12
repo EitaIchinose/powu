@@ -11,7 +11,7 @@
 | given_name            | string  | null: false               |
 | family_name_kana      | string  | null: false               |
 | given_name_kana       | string  | null: false               |
-| duty_station          | string  | null: false               |
+| duty_station          | string  |                           |
 | birthday              | date    | null: false               |
 
 ### Association
