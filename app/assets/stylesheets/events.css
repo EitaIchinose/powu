@@ -1,0 +1,160 @@
+/* 全体 */
+.wrapper {
+  display: flex;
+}
+
+/* サイドバー・全体 */
+.side-bar {
+  background-color: #000066;
+  width: 300px;
+  height: 100vh;
+}
+
+/* サイド・ヘッダー */
+.side-header {
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user-name {
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none;
+}
+
+.table-create {
+  font-size: 10px;
+  color: deepskyblue;
+  border: 1px solid lightblue;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* サイド・メイン */
+.side-main {
+  height: calc(100vh - 100px);
+  background-color: #000099;
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.department {
+  padding: 20px 0 40px;
+}
+
+.department-name {
+  color: white;
+  text-decoration: none;
+}
+/* メイン・全体 */
+.event {
+  background-color: #FFFFFF;
+  width: calc(100vw - 300px);
+}
+
+/* メイン・ヘッダー */
+.event-header {
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-name {
+  font-size: 24px;
+  color: #333;
+  margin-top: 36px;
+}
+
+.event-destroy {
+  margin-top: 40px;
+}
+
+.event-destroy a {
+  text-decoration: none;
+  color: darkred;
+  border: 1px solid darkred;
+  padding: 20px;
+}
+
+/* メイン・イベント */
+.event-main {
+  height: calc(100vh - 100px - 90px);
+  background-color: #fafafa;
+  padding: 40px 40px 0;
+  overflow: scroll;
+}
+
+.comment {
+  margin-bottom: 40px;
+}
+
+.comment-user {
+  display: flex;
+  margin: 10px 0;
+}
+
+.comment-user-name {
+  color: #434A54;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+.current-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.comment-content {
+  color: #434A54;
+  font-size: 14px;
+}
+
+/* メイン・フォーム */
+.form {
+  height: 90px;
+  background-color: #DDDDDD;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-comment {
+  width: 100%;
+  background-color: white;
+  display: flex;
+}
+
+.form-input {
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  border: none;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-submit {
+  height: 50px;
+  padding: 0 20px;
+  color: white;
+  font-size: 16px;
+  background-color: #38AEF0;
+  border: none;
+  margin-left: 15px;
+}

@@ -1,0 +1,63 @@
+<div class="event-header">
+  <div class=event-name>hogefuga</div>
+  <div class="event-destroy">
+    <%= link_to 'チャットを終了する', '#' %>
+  </div>
+</div>
+
+<div class="event-main">
+  <div class="plan-create">
+    <%= link_to '予定を追加', new_event_path %>
+  </div>
+  <div class="calendar">
+    <%# カレンダ表 %>
+    <%= month_calendar events: @events do |date, events| %>
+      <%= date.day %>
+      <%# カレンダー予定追加 %>
+      <% events.each do |event| %>
+        <div class="create-title">
+          <%= event.title %>
+        </div>
+      <% end %>
+      <%#/ カレンダー予定追加 %>
+    <% end %>
+    <%#/ カレンダー表 %>
+  </div>
+  <div class="comment">
+    <div class="comment-user">
+      <div class="comment-user-name">
+        Tom
+      </div>
+      <div class="current-time">
+        2020/3/31(Wed) 12:43:30
+      </div>
+    </div>
+    <div class="comment-content">
+      おはよう
+    </div>
+  </div>
+  <div class="comment">
+    <div class="comment-user">
+      <div class="comment-user-name">
+        Tom
+      </div>
+      <div class="current-time">
+        2020/3/31(Wed) 18:43:30
+      </div>
+    </div>
+    <div class="comment-content">
+      こんばんわ
+    </div>
+  </div>
+</div>
+
+<div class="form">
+  <div class="form-comment">
+    <input type="text" placeholder="type a message" class="form-input" >
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <input type="file" class="hidden">
+    </label>
+  </div>
+  <input type="submit" value="送信" class="form-submit">
+</div>
