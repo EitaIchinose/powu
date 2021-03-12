@@ -6,6 +6,23 @@
 </div>
 
 <div class="event-main">
+  <div class="plan-create">
+    <%= link_to '予定を追加', new_event_path %>
+  </div>
+  <div class="calendar">
+    <%# カレンダ表 %>
+    <%= month_calendar events: @events do |date, events| %>
+      <%= date.day %>
+      <%# カレンダー予定追加 %>
+      <% events.each do |event| %>
+        <div class="create-title">
+          <%= event.title %>
+        </div>
+      <% end %>
+      <%#/ カレンダー予定追加 %>
+    <% end %>
+    <%#/ カレンダー表 %>
+  </div>
 </div>
 
 <div class="form">
