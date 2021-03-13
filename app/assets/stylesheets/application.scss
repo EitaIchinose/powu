@@ -11,9 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require simple_calendar
- *= require_tree .
- *= require_self
  */
+ @import "reset.css";
+ @import "bootstrap";
+ @import "events.css";
+ @import "user.css";
+
 
  * {
   box-sizing: border-box;

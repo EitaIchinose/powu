@@ -11,7 +11,7 @@
 | given_name            | string  | null: false               |
 | family_name_kana      | string  | null: false               |
 | given_name_kana       | string  | null: false               |
-| duty_station          | string  | null: false               |
+| duty_station          | string  |                           |
 | birthday              | date    | null: false               |
 
 ### Association
@@ -54,7 +54,7 @@
 | title            | string      | null: false                    |
 | start_time       | datetime    | null: false                    |
 | content          | text        | null: false                    |
-| user             | references  | null: false, foreign_key:true  |
+| user             | references  | null: false, foreign_key: true |
 | department       | references  | null: false, foreign_key: true |
 
 ### Association
