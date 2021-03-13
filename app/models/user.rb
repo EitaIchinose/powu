@@ -5,23 +5,19 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :password_confirmation
     validates :nickname
-    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/ } do
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/, message: "は半角英数字不可です" } do
       validates :family_name
       validates :given_name
     end
-    with_options format: { with: /\A[ァ-ヶー－]+\z/ } do
+    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: "はカタカナのみ登録可能です" } do
       validates :family_name_kana
       validates :given_name_kana
     end
     validates :birthday
   end
 
-  with_options format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/ }, on: create do
-    validates :password
-    validates :password_confirmation
-  end
+  validates :password, :password_confirmation,  format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/, message: "は登録不可能な値です" }
 
   has_many :events
 end

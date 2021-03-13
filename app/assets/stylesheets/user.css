@@ -113,7 +113,7 @@
   font-size: 13px;
 }
 
-/* 誕生日 */
+/* 生年月日 */
 .input-birth-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +136,13 @@
   line-height: 60px;
   padding: 0 5px;
 }
-/* /誕生日 */
+
+/* 生年月日・エラー時レイアウト修正 */
+.input-birth-wrap .field_with_errors {
+  display: contents;
+}
+
+/* /生年月日 */
 
 /* お名前 */
 .input-name-wrap {
