@@ -18,7 +18,7 @@
 
 - has_many :events
 - has_many :department_users
-- has_many :departments, through: department_users
+- has_many :departments, through: :department_users
 - has_many :comments
 
 ## departments テーブル
@@ -31,7 +31,7 @@
 
 - has_many :events
 - has_many :department_users
-- has_many :users, through: department_users
+- has_many :users, through: :department_users
 - has_many :comments
 
 
