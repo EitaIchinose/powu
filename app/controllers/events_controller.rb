@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def index
+    @departments = Department.all
     @events = Event.all
   end
 

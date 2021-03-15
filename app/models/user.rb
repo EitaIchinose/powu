@@ -20,6 +20,4 @@ class User < ApplicationRecord
   validates :password, :password_confirmation,  format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]/, message: "は登録不可能な値です" }, on: :create
 
   has_many :events
-  has_many :department_users
-  has_many :departments, through: :department_users
 end

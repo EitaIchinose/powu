@@ -14,6 +14,6 @@ class DepartmentsController < ApplicationController
 
   private
   def department_params
-    params.require(:department).permit(:name, user_ids: [])
+    params.require(:department).permit(:name)
   end
 end

@@ -4,7 +4,7 @@
 </div>
 
 <div class="side-main">
-    <% current_user.departments.each do |department| %>
+    <% @departments.each do |department| %>
       <div class="department">
         <%= link_to department.name, '#', class: "department-name" %>
       </div>
