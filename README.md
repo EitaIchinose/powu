@@ -17,8 +17,6 @@
 ### Association
 
 - has_many :events
-- has_many :department_users
-- has_many :departments, through: department_users
 - has_many :comments
 
 ## departments テーブル
@@ -30,22 +28,7 @@
 ### Association
 
 - has_many :events
-- has_many :department_users
-- has_many :users, through: department_users
 - has_many :comments
-
-
-## department_users テーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| department    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :event
 
 ## events テーブル
 

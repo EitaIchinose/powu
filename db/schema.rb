@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_075032) do
+ActiveRecord::Schema.define(version: 2021_03_15_074954) do
+
+  create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "start_time", null: false
     t.text "content", null: false
     t.bigint "user_id", null: false
+    t.bigint "department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_events_on_department_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -41,5 +49,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_075032) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "departments"
   add_foreign_key "events", "users"
 end
