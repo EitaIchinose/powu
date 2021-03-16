@@ -1,5 +1,4 @@
 class Department < ApplicationRecord
-  has_many :department_events
-  has_many :events, through: :department_events
+  has_many :events, dependent: :destroy
   validates :name, presence: true
 end

@@ -3,7 +3,7 @@
     <%= @department.name %>
   </div>
   <div class="event-destroy">
-    <%= link_to 'チャットを終了する', '#' %>
+    <%= link_to 'チャットを終了する', department_path(@department.id), method: :delete %>
   </div>
 </div>
 

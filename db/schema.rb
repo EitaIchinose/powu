@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_121336) do
-
-  create_table "department_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "department_id"
-    t.bigint "event_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["department_id"], name: "index_department_events_on_department_id"
-    t.index ["event_id"], name: "index_department_events_on_event_id"
-  end
+ActiveRecord::Schema.define(version: 2021_03_14_035438) do
 
   create_table "departments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -32,8 +23,10 @@ ActiveRecord::Schema.define(version: 2021_03_15_121336) do
     t.datetime "start_time", null: false
     t.text "content", null: false
     t.bigint "user_id", null: false
+    t.bigint "department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_events_on_department_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -52,11 +45,8 @@ ActiveRecord::Schema.define(version: 2021_03_15_121336) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "department_events", "departments"
-  add_foreign_key "department_events", "events"
+  add_foreign_key "events", "departments"
   add_foreign_key "events", "users"
 end
