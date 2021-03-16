@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @departments = Department.all
+    @department = Department.find(params[:department_id])
     @events = Department.find(params[:department_id]).events
   end
 
