@@ -25,41 +25,19 @@
     <% end %>
     <%#/ カレンダー表 %>
   </div>
-  <div class="comment">
-    <div class="comment-user">
-      <div class="comment-user-name">
-        Tom
-      </div>
-      <div class="current-time">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="comment-content">
-      おはよう
-    </div>
-  </div>
-  <div class="comment">
-    <div class="comment-user">
-      <div class="comment-user-name">
-        Tom
-      </div>
-      <div class="current-time">
-        2020/3/31(Wed) 18:43:30
-      </div>
-    </div>
-    <div class="comment-content">
-      こんばんわ
-    </div>
+
+  <div class="comments">
+    <%= render partial: 'comment', collection: @comments %>
   </div>
 </div>
 
-<div class="form">
+<%= form_with model: [@department, @comment], class: "form", local: true do |f| %>
   <div class="form-comment">
-    <input type="text" placeholder="type a message" class="form-input" >
+    <%= f.text_field :text, placeholder: "type a message", class: "form-input" %>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%= f.file_field :image, class: "hidden" %>
     </label>
   </div>
-  <input type="submit" value="送信" class="form-submit">
-</div>
+  <%= f.submit '送信', class: "form-submit" %>
+<% end %>
