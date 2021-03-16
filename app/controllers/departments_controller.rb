@@ -1,5 +1,4 @@
 class DepartmentsController < ApplicationController
-
   def index
     @departments = Department.all
   end
@@ -24,6 +23,7 @@ class DepartmentsController < ApplicationController
   end
 
   private
+
   def department_params
     params.require(:department).permit(:name)
   end

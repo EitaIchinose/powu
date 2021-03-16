@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   def index
     @departments = Department.all
     @department = Department.find(params[:department_id])
@@ -26,7 +25,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :start_time).merge(user_id: current_user.id, department_id: params[:department_id])
+    params.require(:event).permit(:title, :content, :start_time).merge(user_id: current_user.id,
+                                                                       department_id: params[:department_id])
   end
-
 end
