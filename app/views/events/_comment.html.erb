@@ -10,4 +10,5 @@
     <div class="comment-content">
       <%= comment.text %>
     </div>
+    <%= image_tag comment.image.variant(resize: '500x500'), class: 'comment-image' if comment.image.attached? %>
 </div>
