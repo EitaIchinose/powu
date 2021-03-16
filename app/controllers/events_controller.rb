@@ -4,6 +4,7 @@ class EventsController < ApplicationController
     @departments = Department.all
     @department = Department.find(params[:department_id])
     @events = Department.find(params[:department_id]).events
+    @comment = Comment.new
   end
 
   def new
