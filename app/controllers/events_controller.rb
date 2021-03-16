@@ -5,6 +5,7 @@ class EventsController < ApplicationController
     @department = Department.find(params[:department_id])
     @events = Department.find(params[:department_id]).events
     @comment = Comment.new
+    @comments = @department.comments.includes(:user)
   end
 
   def new

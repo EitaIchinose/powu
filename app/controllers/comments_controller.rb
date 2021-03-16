@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to department_events_path(@department)
     else
+      @comments = @department.comments.includes(:user)
       render department_events_path(@department)
     end
   end
