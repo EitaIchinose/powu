@@ -158,3 +158,52 @@
   border: none;
   margin-left: 15px;
 }
+
+/* 新規予定追加画面 */
+.event-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 80px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.plan-name {
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.time {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-name {
+  letter-spacing: 2px;
+  padding-right: 15px;
+}
+
+.time select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+textarea {
+  height: 300px;
+}
+
+.submit {
+  text-align: center;
+}

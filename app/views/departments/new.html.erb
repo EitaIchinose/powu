@@ -1,10 +1,10 @@
 <div class="department-form">
-  <div class="title">新規スケジュール</div>
+  <div class="title">新規予定表</div>
   <%=form_with model: @department, local: true do |f|%>
     <div class="department-format">
       <div class="form-group side">
-        <%= f.label :部署・所属,for: "formGroupExampleInput", class: 'department-form-label'%>
-        <%= f.text_field :name, class: 'department-form-input form-control', id:"formGroupExampleInput", placeholder: '部署・所属名を入力してください' %>
+        <%= f.label :名前,for: "formGroupExampleInput", class: 'department-form-label'%>
+        <%= f.text_field :name, class: 'department-form-input form-control', id:"formGroupExampleInput", placeholder: '予定表の名前を入力してください' %>
       </div>
 
      <!-- メンバー追加リスト未実装・セレクトボックス（複数）-->

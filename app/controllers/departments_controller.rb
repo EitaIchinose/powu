@@ -17,6 +17,12 @@ class DepartmentsController < ApplicationController
     end
   end
 
+  def destroy
+    department = Department.find(params[:id])
+    department.destroy
+    redirect_to root_path
+  end
+
   private
   def department_params
     params.require(:department).permit(:name)

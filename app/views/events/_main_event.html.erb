@@ -1,13 +1,15 @@
 <div class="event-header">
-  <div class=event-name>hogefuga</div>
+  <div class=event-name>
+    <%= @department.name %>
+  </div>
   <div class="event-destroy">
-    <%= link_to 'チャットを終了する', '#' %>
+    <%= link_to '予定表を削除する', department_path(@department.id), method: :delete %>
   </div>
 </div>
 
 <div class="event-main">
   <div class="plan-create">
-    <%= link_to '予定を追加', new_event_path %>
+    <%= link_to '予定を追加', new_department_event_path %>
   </div>
   <div class="calendar">
     <%# カレンダ表 %>
@@ -16,7 +18,7 @@
       <%# カレンダー予定追加 %>
       <% events.each do |event| %>
         <div class="create-title">
-          <%= event.title %>
+          <%=  event.title %>
         </div>
       <% end %>
       <%#/ カレンダー予定追加 %>

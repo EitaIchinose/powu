@@ -9,6 +9,10 @@ ja:
        family_name_kana: 名字（カナ）
        given_name_kana: 名前（カナ）
        birthday: 生年月日
+     department:
+       name: 名前
+     event:
+       start_time: 開始時間
   date:
     abbr_day_names:
       - 日
