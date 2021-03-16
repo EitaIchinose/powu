@@ -159,7 +159,7 @@
   margin-left: 15px;
 }
 
-/* 予定追加画面 */
+/* 新規予定追加画面 */
 .event-form {
   width: 980px;
   margin: 60px auto;
@@ -173,12 +173,19 @@
 .plan-name {
   text-align: center;
   font-size: 35px;
+  letter-spacing: 2px;
 }
 
 .time {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-name {
+  letter-spacing: 2px;
+  padding-right: 15px;
 }
 
 .time select {
@@ -193,7 +200,10 @@
   cursor: pointer;
 }
 
-.input-birth-wrap p {
-  line-height: 60px;
-  padding: 0 5px;
+textarea {
+  height: 300px;
+}
+
+.submit {
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 <div class="event-form">
-  <div class="plan-name">新規予定追加</div>
+  <div class="plan-name font-weight-bold">新規予定追加</div>
 
   <%= form_with model: @events, url: department_events_path, local: true do |form| %>
 
@@ -9,19 +9,19 @@
     </div>
 
     <div class="time">
-      <%= form.label :開始時間 %>
+      <%= form.label :開始時間, class:"time-name font-weight-bold" %>
       <%= form.datetime_select :start_time %>
     </div>
 
     <div class="content form-group">
-      <%= form.label :内容 %>
-      <%= form.text_field :content %>
+      <%= form.label :内容, class:"font-weight-bold" %>
+      <%= form.text_area :content, class:"form-control text-area" %>
     </div>
 
 
     <div class="submit">
       <input name="event[department_ids][]" type="hidden" value=<%= @department.id %>>
-      <%= form.submit :登録,url: department_events_path, method: :post %>
+      <%= form.submit :登録,url: department_events_path, method: :post, class:"btn btn-primary" %>
     </div>
 
   <% end %>
