@@ -6,7 +6,7 @@
 <div class="side-main">
     <% @departments.each do |department| %>
       <div class="department">
-        <%= link_to department.name, department_events_path(department), class: "department-name" %>
+        <%= link_to department.name, department_events_path(department), class: "department-name", id:"department_name"%>
       </div>
     <% end %>
 </div>

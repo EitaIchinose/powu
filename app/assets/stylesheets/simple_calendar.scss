@@ -1,0 +1,131 @@
+.event-title {
+  color: black;
+  font-size: 13px;
+}
+
+.event-display {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-display span {
+  font-size: 13px;
+  color: gray;
+}
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.calendar-title {
+  font-size: 50px;
+}
+
+/* Simple Calendar内 css */
+.simple-calendar {
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 6px;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 14%;
+
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+  }
+
+  .day {
+    height: 100px;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background: #FFFFC0
+  }
+
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background: #DDD;
+  }
+  .next-month {
+    background: #DDD;
+  }
+  .current-month {}
+
+  .has-events {}
+}
+
+/* タイトル名にマウスを乗せると情報が吹き出しで出てくる */
+.balloonoya {
+  position   : relative;                /* 指定した分だけ相対的に移動 */
+}
+.balloonoya:hover .balloon {
+  display: inline;                /* インライン要素として表示 */
+}
+.balloon {
+  position   : absolute;                /* 親要素を基準 */
+  display: none;                        /* 要素を非表示 */
+  padding: 2px;                         /* テキストの前後の余白 */
+  background-color: rgba(153, 255, 255, 0.86);       /* 背景色（透明度） */
+  width:180px;                          /* 吹き出し全体の幅 */
+  right : -60%;                          /* 表示位置 */
+  font-size: 80%;                       /* 文字サイズ */
+  text-decoration: underline;
+}
+.balloon:after{
+  border-right: 12px solid rgba(153, 255, 255, 0.86);  /* 吹き出し口の幅・色 */
+  border-top: 10px solid transparent;     /* 吹き出し口の高さ１／２ */
+  border-bottom: 10px solid transparent;  /* 吹き出し口の高さ１／２ */
+  left: -12px;                            /* 吹き出し口の位置調整 */
+  top: 5%;                                /* 吹き出し口の縦位置 */
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+}
