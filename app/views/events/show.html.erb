@@ -23,7 +23,7 @@
   </table>
   <div class="transition">
     <%= link_to '編集画面へ', edit_department_event_path(@department,@event), class: 'edit-btn' %>
-    <%= link_to '予定を削除', department_event_path(@event),method: :delete, class: 'delete-btn' %>
+    <%= link_to '予定を削除', department_event_path(@department,@event),method: :delete, class: 'delete-btn' %>
   </div>
   <div class="back">
     <%= link_to '←戻る', :back , class: 'back-btn' %>
