@@ -3,7 +3,7 @@
     <%= @department.name %>
   </div>
   <div class="event-destroy">
-    <%= link_to '予定表を削除する', department_path(@department.id), method: :delete %>
+    <%= link_to '予定表を削除する', department_path(@department.id), method: :delete, class:"button" %>
   </div>
 </div>
 
@@ -17,8 +17,18 @@
       <%= date.day %>
       <%# カレンダー予定追加 %>
       <% events.each do |event| %>
-        <div class="create-title">
-          <%=  event.title %>
+        <div class="create-title balloonoya" id="title">
+        <%# 吹き出し部分 %>
+          <span class="balloon">
+          予定：<%= event.title %><br>
+          <span><%= event.start_time.strftime("%Y年%m月%d日 %H:%M:%S") %></span><br>
+          <%= event.content %>
+          </span>
+        <%#/ 吹き出し部分%>
+          <div class="event-display">
+            <%=link_to event.title, department_event_path(event.id,@department), class:"event-title" %>
+            <span><%= event.start_time.strftime("%H:%M")%></span>
+          </div>
         </div>
       <% end %>
       <%#/ カレンダー予定追加 %>

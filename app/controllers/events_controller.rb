@@ -22,10 +22,27 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(params[:department_id])
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def event_params
     params.require(:event).permit(:title, :content, :start_time).merge(user_id: current_user.id,
                                                                        department_id: params[:department_id])
+  end
+
+  def datetime_params
+    params.require(:event).permit(:start_time)
   end
 end
