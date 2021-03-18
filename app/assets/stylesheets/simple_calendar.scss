@@ -105,13 +105,13 @@
 
 /* タイトル名にマウスを乗せると情報が吹き出しで出てくる */
 .balloonoya {
-  position   : relative;                /* 指定した分だけ相対的に移動 */
+  position: relative;                /* 指定した分だけ相対的に移動 */
 }
 .balloonoya:hover .balloon {
   display: inline;                /* インライン要素として表示 */
 }
 .balloon {
-  position   : absolute;                /* 親要素を基準 */
+  position: absolute;                /* 親要素を基準 */
   display: none;                        /* 要素を非表示 */
   padding: 2px;                         /* テキストの前後の余白 */
   background-color: #a6a6a6;       /* 背景色（透明度） */
