@@ -33,8 +33,11 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to department_events_path
+    if @event.update(event_params)
+       redirect_to department_events_path
+    else
+      render :edit
+    end
   end
 
   def destroy
