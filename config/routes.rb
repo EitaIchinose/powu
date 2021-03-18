@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "departments#index"
   resources :users,  only: [:edit, :update]
   resources :departments, only: [:new, :create, :destroy] do
-    resources :events, only: [:index, :new, :create, :show, :edit, :update]
+    resources :events
     resources :comments, only: :create
   end
 end
