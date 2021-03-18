@@ -1,6 +1,6 @@
 <div class="event-form">
   <div class="plan-name font-weight-bold">詳細</div>
-  <table class="table">
+  <table class="table show-table">
     <thead class="thead-dark">
       <tr>
         <th></th>
@@ -24,5 +24,8 @@
   <div class="transition">
     <%= link_to '編集画面へ', edit_department_event_path(@event), class: 'edit-btn' %>
     <%= link_to '予定を削除', department_event_path(@event),method: :delete, class: 'delete-btn' %>
+  </div>
+  <div class="back">
+    <%= link_to '←戻る', :back , class: 'back-btn' %>
   </div>
 </div>
