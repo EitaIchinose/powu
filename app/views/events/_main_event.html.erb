@@ -20,12 +20,12 @@
         <div class="create-title balloonoya" id="title">
           <span class="balloon">
           予定：<%= event.title %><br>
-          <span id="start_time"><%= event.start_time %></span><br>
+          <span><%= event.start_time.strftime("%Y年%m月%d日 %H:%M:%S") %></span><br>
           <%= event.content %>
           </span>
           <div class="event-display">
-            <%=link_to event.title, '#', class:"event-title" %>
-            <span id="display-time"><%= event.start_time%></span>
+            <%=link_to event.title, department_event_path(event.id,@department), class:"event-title" %>
+            <span><%= event.start_time.strftime("%H:%M")%></span>
           </div>
         </div>
       <% end %>

@@ -114,14 +114,13 @@
   position   : absolute;                /* 親要素を基準 */
   display: none;                        /* 要素を非表示 */
   padding: 2px;                         /* テキストの前後の余白 */
-  background-color: rgba(153, 255, 255, 0.86);       /* 背景色（透明度） */
+  background-color: #a6a6a6;       /* 背景色（透明度） */
   width:180px;                          /* 吹き出し全体の幅 */
   right : -60%;                          /* 表示位置 */
   font-size: 80%;                       /* 文字サイズ */
-  text-decoration: underline;
 }
 .balloon:after{
-  border-right: 12px solid rgba(153, 255, 255, 0.86);  /* 吹き出し口の幅・色 */
+  border-right: 12px solid #a6a6a6;  /* 吹き出し口の幅・色 */
   border-top: 10px solid transparent;     /* 吹き出し口の高さ１／２ */
   border-bottom: 10px solid transparent;  /* 吹き出し口の高さ１／２ */
   left: -12px;                            /* 吹き出し口の位置調整 */

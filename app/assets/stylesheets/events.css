@@ -221,3 +221,8 @@ textarea {
 .submit {
   text-align: center;
 }
+
+/* 詳細画面 */
+.table-area {
+  margin-top: 50px;
+}

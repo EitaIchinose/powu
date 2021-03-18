@@ -1,0 +1,25 @@
+<div class="event-form">
+  <div class="plan-name font-weight-bold">詳細</div>
+    <table class="table table-area">
+      <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th class="font-weight-bold">Title</th>
+          <th><%= @event.title %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td class="font-weight-bold">開始時間</td>
+          <td><%= @event.start_time.strftime("%H:%M") %></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td class="font-weight-bold">内容</td>
+          <td><%= @event.content %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
