@@ -306,3 +306,16 @@ textarea {
   color         : #999999;     /* 背景色     */
   background    : #ffffff;     /* 文字色     */
 }
+
+
+/* jQuery吹き出し機能用・未実装 
+ui-tooltip {
+  font-size: 14px;
+  width: 250px;
+}
+
+.tooltipClose {
+float: right;
+font-size: 20px;
+margin-top: -10px;
+}                          */

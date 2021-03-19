@@ -72,7 +72,7 @@
   }
 
   .day {
-    height: 100px;
+    height: 120px;
   }
 
   .wday-0 {}
@@ -101,30 +101,4 @@
   .current-month {}
 
   .has-events {}
-}
-
-/* タイトル名にマウスを乗せると情報が吹き出しで出てくる */
-.balloonoya {
-  position: relative;                /* 指定した分だけ相対的に移動 */
-}
-.balloonoya:hover .balloon {
-  display: inline;                /* インライン要素として表示 */
-}
-.balloon {
-  position: absolute;                /* 親要素を基準 */
-  display: none;                        /* 要素を非表示 */
-  padding: 2px;                         /* テキストの前後の余白 */
-  background-color: #cccccc;       /* 背景色（透明度） */
-  width:180px;                          /* 吹き出し全体の幅 */
-  right : -60%;                          /* 表示位置 */
-  font-size: 80%;                       /* 文字サイズ */
-}
-.balloon:after{
-  border-right: 12px solid #cccccc;  /* 吹き出し口の幅・色 */
-  border-top: 10px solid transparent;     /* 吹き出し口の高さ１／２ */
-  border-bottom: 10px solid transparent;  /* 吹き出し口の高さ１／２ */
-  left: -12px;                            /* 吹き出し口の位置調整 */
-  top: 5%;                                /* 吹き出し口の縦位置 */
-  content: "";                       /* コンテンツの挿入 */
-  position: absolute;                /* 親要素を基準 */
 }
