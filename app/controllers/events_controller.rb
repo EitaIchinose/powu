@@ -1,43 +1,45 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_department, only: [:index, :create, :show]
+
   def index
-    @departments = Department.all
-    @department = Department.find(params[:department_id])
-    @events = Department.find(params[:department_id]).events
+    @departments = Department.all                             # 予定表の表記名用
+    @events = Department.find(params[:department_id]).events  # 予定表に関連のある予定だけを抽出
     @comment = Comment.new
-    @comments = @department.comments.includes(:user)
+    @comments = @department.comments.includes(:user)          # 予定表に関連づいたコメントのみを取得
+    gon.event = @events                                       #js用の変数
   end
 
   def new
     @events = current_user.events
-    @department = Department.find(params[:department_id])
   end
 
   def create
-    @department = Department.find(params[:department_id])
-    @events = @department.events.new(event_params)
+    @events = @department.events.new(event_params)            # 予定表に関連づいた予定のみを抽出
     if @events.save
-      redirect_to department_events_path(@department.id)
+      redirect_index
     else
-      redirect_to new_department_event_path
+      render :new
     end
   end
 
   def show
-    @event = Event.find(params[:id])
-    @department = Department.find(params[:department_id])
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to department_events_path
+    if @event.update(event_params)
+       redirect_index
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @event.destroy
+    redirect_index
   end
 
   private
@@ -47,8 +49,15 @@ class EventsController < ApplicationController
                                                                        department_id: params[:department_id])
   end
 
-  def datetime_params
-    params.permit(:title, :content, :start_time).merge(user_id: current_user.id,
-      department_id: params[:department_id])
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
+  def set_department
+    @department = Department.find(params[:department_id])
+  end
+
+  def redirect_index
+    redirect_to department_events_path
   end
 end
