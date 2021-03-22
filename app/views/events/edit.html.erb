@@ -2,6 +2,7 @@
   <div class="plan-name font-weight-bold">予定を編集</div>
 
   <%= form_with(model: @event, url:department_event_path, local: true) do |form| %>
+    <%= render 'layouts/error_messages', model: @event %>
 
     <div class="form-group">
       <%= form.label :title, class:"event-title font-weight-bold" %>
