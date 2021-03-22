@@ -9,27 +9,48 @@
 
 <div class="event-main">
   <div class="plan-create">
-    <%= link_to '予定を追加', new_department_event_path %>
+    <%= link_to '予定を追加', new_department_event_path, class:"btn btn-primary btn-lg active" %>
   </div>
-  <div class="calendar">
-    <%# カレンダ表 %>
-    <%= month_calendar events: @events do |date, events| %>
-      <%= date.day %>
-      <%# カレンダー予定追加 %>
-      <% events.each do |event| %>
-        <div class="event-display">
-          <%=link_to event.title, department_event_path(@department,event), class:"event-title"%>
-          <span><%= event.start_time.strftime("%H:%M")%></span>
-        </div>
+  <%# カレンダー%>
+  <div class="tab-wrap">
+    <ul>
+      <li class="tab-btn show">月</li>
+      <li class="tab-btn">週</li>
+    </ul>
+    <%# 月カレンダー%>
+    <div class="calendar tab-contents show">
+      <%= month_calendar events: @events do |date, events| %>
+        <%= date.day %>
+        <% events.each do |event| %>
+          <div class="event-display">
+            <%=link_to event.title, department_event_path(@department,event), class:"event-title"%>
+            <span><%= event.start_time.strftime("%H:%M")%></span>
+          </div>
+        <% end %>
       <% end %>
-      <%#/ カレンダー予定追加 %>
-    <% end %>
-    <%#/ カレンダー表 %>
+    </div>
+    <%# /月カレンダー%>
+    <%# 週カレンダー%>
+    <div class="calendar tab-contents">
+      <%= week_calendar(events: @events) do |date, events| %>
+        <%= date.day %>
+        <% events.each do |event| %>
+          <div class="event-display">
+            <%=link_to event.title, department_event_path(@department,event), class:"event-title"%>
+            <span><%= event.start_time.strftime("%H:%M")%></span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%# /週カレンダー%>
   </div>
+  <%# /カレンダー%>
 
+  <%# コメント%>
   <div class="comments">
     <%= render partial: 'comment', collection: @comments %>
   </div>
+  <%# /コメント%>
 </div>
 
 <%= form_with model: [@department, @comment], class: "form", local: true do |f| %>
