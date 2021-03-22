@@ -2,6 +2,8 @@
   <div class="plan-name font-weight-bold">新規予定追加</div>
 
   <%= form_with model: @events, url: department_events_path, local: true do |form| %>
+    <%= render 'layouts/error_messages', model: @events %>
+
 
     <div class="form-group">
       <%= form.label :title, class:"event-title font-weight-bold" %>
@@ -20,7 +22,11 @@
 
 
     <div class="submit">
-      <%= form.submit :登録,url: department_events_path, method: :post, class:"btn btn-primary" %>
+      <%= form.submit :登録,url: department_events_path, method: :post, class:"show-btn" %>
+    </div>
+
+    <div class="back">
+      <%= link_to '←戻る', :back , class: 'back-btn' %>
     </div>
 
   <% end %>
