@@ -4,7 +4,7 @@
 }
 
 /* エラー表示 */
-.error-message {
+.error-alert ul {
   margin: 20px 0;
   padding: 20px 30px;
   border: 1px solid #ddd;
@@ -235,6 +235,22 @@ textarea {
   text-align: center;
 }
 
+/* 時間 */
+.start_time {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.end_time {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.days {
+  text-align: right;
+}
+
 /* 予定追加ボタン */
 .show-btn {
   display       : inline-block;
@@ -343,7 +359,7 @@ textarea {
 }
 
 
-/* jQuery吹き出し機能用・未実装 
+/*   jQuery吹き出し機能用・未実装 
 ui-tooltip {
   font-size: 14px;
   width: 250px;
