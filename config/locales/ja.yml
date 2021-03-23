@@ -13,6 +13,7 @@ ja:
        name: 名前
      event:
        start_time: 開始時間
+       end_time: 終了時間
      comment:
        text: 文
   date:
