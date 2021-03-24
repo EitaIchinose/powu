@@ -24,6 +24,13 @@
   margin: auto;
 }
 
+.over-text {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 120px;
+  text-overflow: ellipsis;
+}
+
 /* カレンダータブ */
 .tab-wrap ul {
   display: flex;
@@ -57,7 +64,6 @@
   display: block;
   padding: 20px;
 }
-/* カレンダータブ */
 
 /* Simple Calendar内 css */
 .simple-calendar {

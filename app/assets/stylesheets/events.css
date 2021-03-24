@@ -227,10 +227,6 @@
   cursor: pointer;
 }
 
-textarea {
-  height: 300px;
-}
-
 .submit {
   text-align: center;
 }
@@ -274,6 +270,11 @@ textarea {
 
 .heading {
   letter-spacing: 2px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+#display-bottom {
+  border-bottom: 1px solid #dee2e6;
 }
 
 .transition {
@@ -282,6 +283,10 @@ textarea {
   justify-content: space-around;
 }
 
+.content-name {
+  padding-left: 80px;
+  margin-bottom: 16px;
+}
 
 /* 編集画面へボタン */
 .edit-btn {

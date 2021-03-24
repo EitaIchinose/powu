@@ -15,12 +15,16 @@
         <td><%= @event.start_time.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
       </tr>
       <tr>
-        <th scope="row"></th>
-        <td class="font-weight-bold heading">内容</td>
-        <td><%= @event.content %></td>
+        <th scope="row" id="display-bottom"></th>
+        <td class="font-weight-bold heading">終了時間</td>
+        <td id="display-bottom"><%= @event.end_time.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
       </tr>
     </tbody>
   </table>
+  <div class="content-area">
+    <div class="content-name font-weight-bold">内容</div>
+      <%= safe_join(@event.content.split("\n"),tag(:br)) %>
+    </div>
   <div class="transition">
     <%= link_to '編集画面へ', edit_department_event_path(@department,@event), class: 'edit-btn' %>
     <%= link_to '予定を削除', department_event_path(@department,@event),method: :delete, class: 'delete-btn' %>

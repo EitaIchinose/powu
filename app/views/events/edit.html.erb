@@ -9,10 +9,27 @@
       <%= form.text_field :title, class:"form-control" %>
     </div>
 
-    <div class="time">
-      <%= form.label :開始時間, class:"time-name font-weight-bold" %>
-      <%= form.datetime_select :start_time %>
+    <div class="times">
+      <div class="time">
+        <%= form.label :開始, class:"time-name font-weight-bold" %>
+        <%= form.text_field :start_time, class:"flatpickr days form-control", placeholder:"select.date..."%>
+      </div>
+
+      <div class="time">
+        <%= form.label :終了, class:"time-name font-weight-bold" %>
+        <%= form.text_field :end_time, class:"flatpickr days form-control", placeholder:"select.date..." %>
+      </div>
     </div>
+
+    <script>
+      const config_day = {
+        time_24hr: true,    // 時間24時間設定
+        enableTime: true,   // 時間の選択可否
+        minDate: "today",       // 入力範囲指定（本日以降）
+        "locale": "ja",         // 言語設定
+      }
+      flatpickr('.flatpickr', config_day);
+    </script>
 
     <div class="content form-group">
       <%= form.label :内容, class:"font-weight-bold" %>
