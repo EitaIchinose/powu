@@ -10,48 +10,27 @@
       <%= form.text_field :title, class:"form-control" %>
     </div>
 
-    <div class="start_time">
+    <div class="times">
       <div class="time">
         <%= form.label :開始, class:"time-name font-weight-bold" %>
-        <%= form.text_field :start_time, class:"flatpickr days", style: "border: none" %>
+        <%= form.text_field :start_time, class:"flatpickr days form-control" %>
       </div>
 
-      <div class="time">
-        <%= form.text_field :start_time, class:"flatpickr_time form-control showTooltip",  title: "ツールチップ", placeholder:"select.time..." %>
-      </div>
-    </div>
-
-    <div class="end_time">
       <div class="time">
         <%= form.label :終了, class:"time-name font-weight-bold" %>
-        <%= form.text_field :end_time, class:"flatpickr days", style: "border: none" %>
-      </div>
-
-      <div class="time">
-        <%= form.text_field :end_time, class:"flatpickr_time form-control", placeholder:"select.time..." %>
+        <%= form.text_field :end_time, class:"flatpickr days form-control" %>
       </div>
     </div>
 
     <script>
-      const config_time = {
-        enableTime: true,   // 時間の選択可否
-        noCalendar: true,   // カレンダー非表示
-        dateFormat: "H:i",  // 表示フォーマット
-        time_24hr: true,    // 時間24時間設定
-        position: "above",  // 表示位置
-      }
       const config_day = {
-        dateFormat: "Y年m月d日", // 表示形式
-        minDate: "today",    // 入力範囲指定（本日以降）
-        defaultDate: 'today',// 日付デフォルト設定
-        "locale": "ja",      // 言語設定
+        time_24hr: true,    // 時間24時間設定
+        enableTime: true,   // 時間の選択可否
+        dateFormat: "Y年m月d日 H:i", // 表示形式
+        minDate: "today",       // 入力範囲指定（本日以降）
+        "locale": "ja",         // 言語設定
       }
-      const config_end = {
-        minTime: config_time
-      }
-      flatpickr('.flatpickr_time', config_time);
       flatpickr('.flatpickr', config_day);
-      flatpickr('.flatpickr_end', config_end);
     </script>
 
     <div class="content form-group">

@@ -236,19 +236,13 @@ textarea {
 }
 
 /* 時間 */
-.start_time {
+.times {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 10px;
-}
-
-.end_time {
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .days {
-  text-align: right;
+  text-align: center;
 }
 
 /* 予定追加ボタン */
