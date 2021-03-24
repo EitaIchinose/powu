@@ -13,12 +13,12 @@
     <div class="times">
       <div class="time">
         <%= form.label :開始, class:"time-name font-weight-bold" %>
-        <%= form.text_field :start_time, class:"flatpickr days form-control" %>
+        <%= form.text_field :start_time, class:"flatpickr days form-control", placeholder:"select.date..."%>
       </div>
 
       <div class="time">
         <%= form.label :終了, class:"time-name font-weight-bold" %>
-        <%= form.text_field :end_time, class:"flatpickr days form-control" %>
+        <%= form.text_field :end_time, class:"flatpickr days form-control", placeholder:"select.date..." %>
       </div>
     </div>
 
@@ -26,7 +26,6 @@
       const config_day = {
         time_24hr: true,    // 時間24時間設定
         enableTime: true,   // 時間の選択可否
-        dateFormat: "Y年m月d日 H:i", // 表示形式
         minDate: "today",       // 入力範囲指定（本日以降）
         "locale": "ja",         // 言語設定
       }
