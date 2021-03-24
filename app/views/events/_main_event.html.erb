@@ -23,7 +23,7 @@
         <%= date.day %>
         <% events.each do |event| %>
           <div class="event-display">
-            <%=link_to event.title, department_event_path(@department,event), class:"event-title"%>
+            <%=link_to event.title, department_event_path(@department,event), class:"event-title over-text"%>
             <span><%= event.start_time.strftime("%H:%M")%></span>
           </div>
         <% end %>
