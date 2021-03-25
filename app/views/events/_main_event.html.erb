@@ -14,35 +14,15 @@
   <%# カレンダー%>
   <div class="tab-wrap">
     <ul>
-      <li class="tab-btn show">月</li>
-      <li class="tab-btn">週</li>
+      <li class="tab-btn show">週</li>
+      <li class="tab-btn">月</li>
     </ul>
-    <%# 月カレンダー%>
-    <div class="calendar tab-contents show">
-      <%= month_calendar events: @events do |date, events| %>
-        <%= date.day %>
-        <% events.each do |event| %>
-          <div class="event-display">
-            <%=link_to event.title, department_event_path(@department,event), class:"event-title over-text"%>
-            <span><%= event.start_time.strftime("%H:%M")%></span>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <%# /月カレンダー%>
     <%# 週カレンダー%>
-    <div class="calendar tab-contents">
-      <%= week_calendar(events: @events) do |date, events| %>
-        <%= date.day %>
-        <% events.each do |event| %>
-          <div class="event-display">
-            <%=link_to event.title, department_event_path(@department,event), class:"event-title"%>
-            <span><%= event.start_time.strftime("%H:%M")%></span>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: 'week_calendar_event', locals: {events: @events, department: @department} %>
     <%# /週カレンダー%>
+    <%# 月カレンダー%>
+    <%= render partial: 'month_calendar_event', locals: {events: @events, department: @department} %>
+    <%# /月カレンダー%>
   </div>
   <%# /カレンダー%>
 
