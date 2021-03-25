@@ -134,11 +134,16 @@
 .current-time {
   color: #999;
   font-size: 12px;
+  padding-right: 10px;
 }
 
 .comment-content {
   color: #434A54;
   font-size: 14px;
+}
+
+.comment-destroy {
+  margin-top: -4px;
 }
 
 /* メイン・フォーム */

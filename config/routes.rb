@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users,  only: [:edit, :update]
   resources :departments, only: [:new, :create, :destroy] do
     resources :events
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
 end
