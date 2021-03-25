@@ -8,6 +8,11 @@
         <div class="current-time">
           <%= l comment.created_at %>
         </div>
+        <% if comment.user == current_user%>
+          <%= link_to department_comment_path(comment.department_id, comment.id), method: :delete,class:"comment-destroy", remote: true do %>
+            <i class="fa fa-trash-o icon-fa" style="color: black;"></i>
+          <% end %>
+        <% end %>
       </div>
       <div class="comment-content">
         <%= comment.text %>
