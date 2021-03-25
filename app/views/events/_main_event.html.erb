@@ -11,20 +11,24 @@
   <div class="plan-create">
     <%= link_to '予定を追加', new_department_event_path, class:"btn btn-primary btn-lg active" %>
   </div>
+  <%# タブ %>
+  <div class="tab-area">
+    <div class="tab in_active">週</div>
+    <div class="tab">月</div>
+  </div>
+  <%# /タブ %>
   <%# カレンダー%>
-  <div class="tab-wrap">
-    <ul>
-      <li class="tab-btn show">月</li>
-      <li class="tab-btn">週</li>
-    </ul>
+  <div class="content-area">
+    <%# 週カレンダー%>
+    <div id="events_calendar_week" class="content show">
+      <%= render partial: 'week_calendar_event', locals: {events: @events, department: @department} %>
+    </div>
+    <%# /週カレンダー%>
     <%# 月カレンダー%>
-    <div id="events_calendar">
+    <div id="events_calendar" class="content">
       <%= render partial: 'month_calendar_event', locals: {events: @events, department: @department} %>
     </div>
     <%# /月カレンダー%>
-    <%# 週カレンダー%>
-    <%= render partial: 'week_calendar_event', locals: {events: @events, department: @department} %>
-    <%# /週カレンダー%>
   </div>
   <%# /カレンダー%>
 
