@@ -1,12 +1,11 @@
 class CommentsController < ApplicationController
   def create
     @department = Department.find(params[:department_id])
-    @comment = @department.comments.new(comment_params)
+    @comment = @department.comments.build(comment_params)
     if @comment.save
-      redirect_to department_events_path(@department)
+       render :index
     else
-      @comments = @department.comments.includes(:user)
-      redirect_to department_events_path(@department)
+      render :error
     end
   end
 
