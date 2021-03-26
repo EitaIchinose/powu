@@ -1,0 +1,11 @@
+<div class="calendar">
+  <%= month_calendar events: events, previous_link: events_ajax_previous_link, next_link: events_ajax_next_link do |date, events| %>
+    <%= date.day %>
+    <% events.each do |event| %>
+      <div class="event-display">
+        <%=link_to event.title, department_event_path(department,event), class:"event-title over-text"%>
+        <span><%= event.start_time.strftime("%H:%M")%></span>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -32,37 +32,38 @@
 }
 
 /* カレンダータブ */
-.tab-wrap ul {
+.tab-area {
   display: flex;
+  justify-content: space-around;
   background: #eee;
   width: 100px;
   margin: 0 0 0 auto;
-}
- 
-.tab-btn {
-  width: 50%;
-  padding: 10px 0;
-  text-align: center;
-  list-style: none;
   cursor: pointer;
+  .tab {
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    list-style: none;
+  }
+  .tab:hover{
+    background-color: #DCDCDC;
+  }
+  .tab.in_active {
+    background: #0062cc;
+    color: #fff;
+    border: none;
+  }
 }
-
-.tab-btn:hover {
-  background-color: #DCDCDC;
-}
- 
-.tab-btn.show {
-  background: #0062cc;
-  color: #fff;
-}
- 
-.tab-contents {
-  display: none;
-}
- 
-.tab-contents.show {
-  display: block;
-  padding: 20px;
+.content-area {
+  .content {
+    display: none;
+  }
+  .content.show {
+    padding: 20px;
+    display: block;
+  }
 }
 
 /* Simple Calendar内 css */

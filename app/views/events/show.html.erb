@@ -1,14 +1,19 @@
 <div class="event-form">
   <div class="plan-name font-weight-bold">詳細</div>
   <table class="table show-table">
-    <thead class="thead-dark">
+    <thead class="thead-light">
       <tr>
         <th></th>
-        <th class="font-weight-bold heading">Title</th>
-        <th><%= @event.title %></th>
+        <th class="font-weight-bold heading">予定者</th>
+        <th><%= @event.user.nickname %></th>
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td class="font-weight-bold heading">Title</td>
+        <td><%= @event.title %></td>
+      </tr>
       <tr>
         <th scope="row"></th>
         <td class="font-weight-bold heading">開始時間</td>
