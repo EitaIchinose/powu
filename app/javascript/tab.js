@@ -1,3 +1,4 @@
+// カレンダータブ切り替え機能
 $(function() {
   let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
   $(".tab").on("click", function() { // tabをクリックしたらイベント発火
